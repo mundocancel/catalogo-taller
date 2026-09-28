@@ -1,0 +1,27 @@
+# Basura de macOS
+.DS_Store
+._*
+
+# Archivos temporales
+*.tmp
+*.bak
+*.swp
+*~
+
+# Backups
+respaldos/*.tar.gz
+respaldos/*.zip
+
+# Node
+node_modules/
+npm-debug.log*
+yarn-error.log*
+
+# Editor
+.vscode/
+.idea/
+*.sublime-*
+
+# Entornos
+.env
+.env.local
