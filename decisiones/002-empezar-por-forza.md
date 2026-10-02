@@ -1,31 +1,50 @@
-# ADR-002 — Empezar por Forza
+# ADR-002 (revisada) — Orden de carga de catálogos por marca
 
-Fecha: 2026-09-28
+Fecha original: 2026-09-28
+Fecha de revisión: 2026-10-01
 Estado: Aceptada
 
 ## Contexto
+El proyecto trabaja con múltiples marcas reales. El orden de carga
+sigue el uso actual del taller donde se trabaja hoy, no el uso
+histórico.
 
-Se trabaja con tres marcas reales: Forza, Indalum, Conalum.
-No se puede cargar todo a la vez.
+Marcas confirmadas (7):
+1. Conalum
+2. Alugama (Forza)
+3. Indalum
+4. Profilo
+5. Extrucciones Metálicas
+6. Cuprum (Smart Frame)
+7. Ayuso (Grupo Ayuso)
+
+Perfilleto: eliminada del inventario (no se usa actualmente).
 
 ## Decisión
+El orden de carga sigue el uso actual del taller:
 
-Empezar por Forza y cerrarla completa antes de abrir Indalum o Conalum.
+1. Conalum — la más usada actualmente, la más económica.
+2. Alugama (Forza) — muy solicitada actualmente.
+3. Indalum — histórica, pero sigue usándose.
+4. Profilo — línea 10000.
+5. Extrucciones Metálicas — línea nacional.
+6. Cuprum (Smart Frame) — RPT, alta gama.
+7. Ayuso (Grupo Ayuso) — Magnum 400, alta gama.
+
+Excepción: Forza ya está en progreso de verificación contra PDF.
+Se termina Forza primero para no dejar trabajo a medias. Después
+se sigue el orden de uso actual.
 
 ## Razón
-
-Forza es la que se ha verificado con más rigor contra PDF.
-Es la que tiene motor de cálculo probado en al menos un caso completo.
-Es la referencia para juzgar si las demás marcas se manejan igual.
+El sistema debe servir primero para lo que más se usa. Pero no
+se abandona trabajo ya iniciado.
 
 ## Consecuencias
-
-- Forza se carga completa: series 3100, 4100, 5100, todas las tipologías.
-- Se verifica contra PDF cada una.
-- Hasta que Forza no esté cerrada, no se abre Indalum ni Conalum.
-- La base multi-marca se confirma cuando Indalum (o Conalum) se cargue
-  con el mismo rigor.
+- Forza: se termina de verificar (trabajo en curso).
+- Conalum: siguiente en la fila (por uso actual).
+- Alugama: después de Conalum.
+- Los demás: en orden de uso.
+- Carpetas de catálogo: se crean para las 7 marcas confirmadas.
 
 ## Revisión
-
-Se revisa cuando Forza esté completa y verificada al 100%.
+Se revisa cuando Forza esté cerrada al 100%.
